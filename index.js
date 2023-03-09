@@ -32,11 +32,17 @@ const getMeanAge = (arr) => {
 
 const getMeanAgeReduce = (arr) => {
 
-    let sum = arr.reduce((n, { age }) => n + age, 0)
+    let sum = arr.reduce(function (acc, el) {
+        return acc + el.age;
+    }, 0)
+
     return sum / arr.length
 
-}
+    //Прикольный метод с деструктуризацией, но не оч понятно
+    // let sum = arr.reduce((n, { age }) => n + age, 0)
+    // return sum / arr.length
 
+}
 
 
 const getNamesOnly = (arr) => {
